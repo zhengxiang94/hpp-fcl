@@ -88,7 +88,7 @@ APPLY_DEFAULT_APPLE_CONFIGURATION()
 COMPUTE_PROJECT_ARGS(PROJECT_ARGS LANGUAGES CXX)
 PROJECT(${PROJECT_NAME} ${PROJECT_ARGS})
 
-OPTION(BUILD_PYTHON_INTERFACE "Build the python bindings" ON)
+OPTION(BUILD_PYTHON_INTERFACE "Build the python bindings" OFF)
 CMAKE_DEPENDENT_OPTION(GENERATE_PYTHON_STUBS "Generate the Python stubs associated to the Python library" OFF BUILD_PYTHON_INTERFACE OFF)
 
 #IF(WIN32)
@@ -282,7 +282,7 @@ SET(${PROJECT_NAME}_HEADERS
   include/hpp/fcl/timings.h
   )
 
-add_subdirectory(doc)
+# add_subdirectory(doc)
 add_subdirectory(src)
 if (BUILD_PYTHON_INTERFACE)
   add_subdirectory(python)
